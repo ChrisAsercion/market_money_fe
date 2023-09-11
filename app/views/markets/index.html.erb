@@ -1,0 +1,22 @@
+<h1>Markets Index Page</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @markets.each do |market| %>
+      <tr>
+        <td><%= market.name %></td>
+        <td><%= market.city %></td>
+        <td><%= market.state %></td>
+        <td><%= link_to "View #{market.name} Details", market_path(market.id.to_i) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
